@@ -18,15 +18,17 @@ import { Button } from "@/dashboard/components/ui";
 import { WorkspacePicker } from "./WorkspacePicker";
 import { DashboardSwitcher } from "./DashboardSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
+import { useDashboard } from "@/dashboard/context/DashboardContext";
 
 export function TopNav({ onMenuClick }) {
   const [profileOpen, setProfileOpen] = useState(false);
   const [createOpen, setCreateOpen] = useState(false);
+  const { isBuildPath } = useDashboard();
 
   return (
-    <header className="sticky top-0 z-30 shrink-0 bg-surface-muted">
-      <div className="relative flex h-12 items-center gap-3 px-4">
-        <div className="absolute left-1/2 top-1/2 hidden w-full max-w-md -translate-x-1/2 -translate-y-1/2 sm:block">
+    <header className="sticky top-0 z-30 shrink-0 border-b border-surface-border/80 bg-surface-muted/95 backdrop-blur-md">
+      <div className="relative flex h-12 items-center gap-2 px-3 sm:gap-3 sm:px-4">
+        <div className="absolute left-1/2 top-1/2 hidden w-full max-w-md -translate-x-1/2 -translate-y-1/2 lg:block">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-ink-faint" />
           <input
             type="search"
@@ -47,16 +49,24 @@ export function TopNav({ onMenuClick }) {
           >
             <Menu className="h-4 w-4" />
           </button>
+          <div className="hidden min-w-0 sm:block md:hidden">
+            <p className="truncate text-sm font-semibold text-ink">
+              {isBuildPath ? "Build workspace" : "Grow workspace"}
+            </p>
+            <p className="truncate text-[11px] text-ink-muted">
+              Rizzbrand Technologies
+            </p>
+          </div>
+          <div className="md:hidden">
+            <DashboardSwitcher />
+          </div>
           <div className="hidden min-w-0 items-center gap-2 md:flex">
             <WorkspacePicker className="w-[220px]" />
             <DashboardSwitcher />
           </div>
         </div>
 
-        <div className="flex flex-1 items-center justify-end gap-1.5">
-          <div className="md:hidden">
-            <DashboardSwitcher />
-          </div>
+        <div className="flex shrink-0 items-center justify-end gap-1 sm:gap-1.5">
           <div className="relative hidden sm:block">
             <Button
               variant="secondary"
@@ -65,7 +75,7 @@ export function TopNav({ onMenuClick }) {
               className="h-8 rounded-lg border-surface-border bg-surface text-ink hover:bg-surface-muted"
             >
               <Plus className="h-3.5 w-3.5" />
-              Create
+              <span className="hidden md:inline">Create</span>
               <ChevronDown className="h-3 w-3 opacity-60" />
             </Button>
             {createOpen && (
@@ -84,10 +94,10 @@ export function TopNav({ onMenuClick }) {
             )}
           </div>
 
-          <Link href="/dashboard/ai">
+          <Link href="/dashboard/ai" className="hidden md:inline-flex">
             <button
               type="button"
-              className="hidden h-8 items-center gap-1.5 rounded-lg border border-surface-border px-2.5 text-xs font-medium text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink sm:inline-flex"
+              className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-surface-border px-2.5 text-xs font-medium text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink"
             >
               <Sparkles className="h-3.5 w-3.5 text-ink-muted" />
               Brain
@@ -157,6 +167,17 @@ export function TopNav({ onMenuClick }) {
               </div>
             )}
           </div>
+        </div>
+      </div>
+
+      <div className="border-t border-surface-border/70 px-3 py-2 sm:px-4 lg:hidden">
+        <div className="relative">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-ink-faint" />
+          <input
+            type="search"
+            placeholder="Search..."
+            className="h-9 w-full rounded-lg border border-surface-border bg-surface pl-9 pr-3 text-sm text-ink outline-none transition focus:border-ink/20 focus:ring-2 focus:ring-ink/10"
+          />
         </div>
       </div>
     </header>

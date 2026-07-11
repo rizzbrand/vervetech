@@ -56,15 +56,15 @@ export default function DashboardOverviewPage() {
         title={`${greeting}, Divine`}
         description="Your business command center — performance, AI insights, and priorities."
         actions={
-          <div className="flex gap-2">
-            <Link href="/dashboard/ai">
-              <Button variant="secondary" size="sm">
+          <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+            <Link href="/dashboard/ai" className="w-full sm:w-auto">
+              <Button variant="secondary" size="sm" className="w-full sm:w-auto">
                 <Sparkles className="h-3.5 w-3.5 text-ink-muted" />
                 Ask AI
               </Button>
             </Link>
-            <Link href="/dashboard/apps">
-              <Button variant="primary" size="sm">
+            <Link href="/dashboard/apps" className="w-full sm:w-auto">
+              <Button variant="primary" size="sm" className="w-full sm:w-auto">
                 Browse apps
                 <ArrowRight className="h-3.5 w-3.5" />
               </Button>
@@ -73,7 +73,7 @@ export default function DashboardOverviewPage() {
         }
       />
 
-      <div className="mb-6 rounded-xl border border-surface-border bg-surface-muted px-5 py-4">
+      <div className="mb-6 rounded-xl border border-surface-border bg-surface-muted px-4 py-4 sm:px-5">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-soft">
@@ -88,8 +88,8 @@ export default function DashboardOverviewPage() {
               </p>
             </div>
           </div>
-          <Link href="/dashboard/ai">
-            <Button variant="primary" size="sm">
+          <Link href="/dashboard/ai" className="w-full sm:w-auto">
+            <Button variant="primary" size="sm" className="w-full sm:w-auto">
               View AI plan
             </Button>
           </Link>
@@ -191,7 +191,9 @@ export default function DashboardOverviewPage() {
                   <p className="text-sm font-medium text-ink">{item.title}</p>
                   <p className="truncate text-xs text-ink-muted">{item.detail}</p>
                 </div>
-                <span className="shrink-0 text-xs text-ink-faint">{item.time}</span>
+                <span className="hidden shrink-0 text-xs text-ink-faint sm:inline">
+                  {item.time}
+                </span>
               </div>
             ))}
           </div>

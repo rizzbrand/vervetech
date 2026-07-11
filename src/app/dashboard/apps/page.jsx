@@ -86,20 +86,20 @@ function BusinessAppsContent() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search apps..."
-            className="h-9 w-full rounded-lg border border-surface-border bg-white pl-9 pr-3 text-sm outline-none focus:border-ink/20 focus:ring-2 focus:ring-black/5"
+            className="h-9 w-full rounded-lg border border-surface-border bg-surface pl-9 pr-3 text-sm outline-none focus:border-ink/20 focus:ring-2 focus:ring-ink/10"
           />
         </div>
-        <div className="flex flex-wrap gap-1.5">
+        <div className="dashboard-scrollbar flex gap-1.5 overflow-x-auto pb-1">
           {APP_CATEGORIES.map((cat) => (
             <button
               key={cat}
               type="button"
               onClick={() => setCategory(cat)}
               className={cn(
-                "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
+                "shrink-0 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
                 category === cat
-                  ? "bg-ink text-white"
-                  : "bg-white text-ink-muted ring-1 ring-surface-border hover:text-ink"
+                  ? "bg-ink text-surface"
+                  : "bg-surface text-ink-muted ring-1 ring-surface-border hover:text-ink"
               )}
             >
               {getCategoryLabel(cat)}

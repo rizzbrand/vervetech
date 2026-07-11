@@ -119,7 +119,7 @@ export function PageHeader({ title, description, action }) {
   return (
     <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight text-ink normal-case sm:text-3xl">
+        <h1 className="text-xl font-semibold tracking-tight text-ink normal-case sm:text-2xl md:text-3xl">
           {title}
         </h1>
         {description && (
@@ -158,7 +158,7 @@ export function DataTable({ columns, rows }) {
         <thead>
           <tr className="border-b border-surface-border text-xs uppercase tracking-wide text-ink-faint">
             {columns.map((col) => (
-              <th key={col.key} className="px-4 py-3 font-medium">
+              <th key={col.key} className="px-3 py-3 font-medium sm:px-4">
                 {col.label}
               </th>
             ))}
@@ -171,7 +171,7 @@ export function DataTable({ columns, rows }) {
               className="border-b border-surface-border/70 last:border-0 hover:bg-surface-muted/60"
             >
               {columns.map((col) => (
-                <td key={col.key} className="px-4 py-3.5 text-ink">
+                <td key={col.key} className="px-3 py-3.5 text-ink sm:px-4">
                   {col.render ? col.render(row) : row[col.key]}
                 </td>
               ))}

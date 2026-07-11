@@ -108,7 +108,7 @@
   }
 
   .dashboard-sidebar-wrap {
-    @apply flex min-h-0 w-full flex-1 p-2 pl-2 pr-1;
+    @apply hidden min-h-0 w-60 shrink-0 p-2 pl-2 pr-1 md:flex;
   }
 
   .dashboard-sidebar {

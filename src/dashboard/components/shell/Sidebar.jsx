@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -223,9 +223,15 @@ function SidebarContent({ onClose, showMobileHeader = false }) {
 }
 
 export function Sidebar({ open, onClose }) {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    onClose();
+  }, [pathname]);
+
   return (
     <>
-      <div className="dashboard-sidebar-wrap hidden min-h-0 md:flex">
+      <div className="dashboard-sidebar-wrap">
         <aside className="dashboard-sidebar">
           <SidebarContent onClose={onClose} />
         </aside>
@@ -239,7 +245,7 @@ export function Sidebar({ open, onClose }) {
             onClick={onClose}
             aria-label="Close overlay"
           />
-          <aside className="dashboard-sidebar absolute inset-y-0 left-0 z-10 w-72 rounded-r-2xl border-l-0 shadow-card">
+          <aside className="dashboard-sidebar absolute inset-y-0 left-0 z-10 flex h-full w-[min(85vw,20rem)] flex-col rounded-r-2xl border-l-0 shadow-card">
             <SidebarContent onClose={onClose} showMobileHeader />
           </aside>
         </div>

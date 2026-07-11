@@ -55,16 +55,16 @@ export default function SettingsPage() {
       />
 
       <div className="grid gap-6 lg:grid-cols-[240px_1fr]">
-        <Card className="h-fit">
+        <Card className="h-fit lg:sticky lg:top-4">
           <CardBody className="p-2">
-            <nav className="space-y-1">
+            <nav className="dashboard-scrollbar flex gap-1 overflow-x-auto pb-1 lg:flex-col lg:space-y-1 lg:overflow-visible lg:pb-0">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+                    "flex shrink-0 items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors lg:w-full",
                     activeTab === tab.id
                       ? "bg-ink text-surface"
                       : "text-ink-muted hover:bg-surface-muted hover:text-ink"

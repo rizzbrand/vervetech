@@ -38,7 +38,7 @@ export function AgentFeatures() {
           <Link
             key={feature.id}
             href={feature.href}
-            className="group relative flex w-[220px] shrink-0 flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card sm:w-[260px]"
+            className="group relative flex w-[200px] shrink-0 flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card sm:w-[260px]"
           >
             <div
               className={cn(

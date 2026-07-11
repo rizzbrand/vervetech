@@ -115,7 +115,7 @@ export default function BuildDashboardPage() {
                     : "Pick how you want to start — templates are fastest, AI is most flexible."}
                 </p>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="dashboard-scrollbar -mx-1 flex items-center gap-2 overflow-x-auto px-1 pb-1">
                 {launchSteps.map((step, index) => {
                   const stepNumber = index + 1;
                   const isComplete = stepNumber < currentStep;
@@ -125,7 +125,7 @@ export default function BuildDashboardPage() {
                     <div
                       key={step.id}
                       className={cn(
-                        "flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium",
+                        "flex shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium",
                         isComplete && "border-ink/10 bg-ink text-white",
                         isCurrent && "border-ink bg-white text-ink",
                         !isComplete && !isCurrent && "border-surface-border bg-surface-muted text-ink-faint"
@@ -275,14 +275,14 @@ export default function BuildDashboardPage() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="dashboard-scrollbar flex gap-2 overflow-x-auto pb-1">
               {templateFilters.map((filter) => (
                 <button
                   key={filter}
                   type="button"
                   onClick={() => setActiveFilter(filter)}
                   className={cn(
-                    "rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
+                    "shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
                     activeFilter === filter
                       ? "bg-ink text-white"
                       : "border border-surface-border bg-white text-ink-muted hover:border-ink/20 hover:text-ink"
@@ -354,20 +354,21 @@ export default function BuildDashboardPage() {
                             <Badge key={feature}>{feature}</Badge>
                           ))}
                         </div>
-                        <div className="flex items-center justify-between gap-3 border-t border-surface-border pt-3">
+                        <div className="flex flex-col gap-3 border-t border-surface-border pt-3 sm:flex-row sm:items-center sm:justify-between">
                           <span className="text-sm font-medium text-ink">
                             {template.price}
                           </span>
-                          <div className="flex gap-2">
+                          <div className="flex w-full gap-2 sm:w-auto">
                             <Button
                               variant="ghost"
                               size="sm"
+                              className="flex-1 sm:flex-none"
                               onClick={() => selectTemplate(template.slug)}
                             >
                               {isSelected ? "Selected" : "Select"}
                             </Button>
-                            <Link href={`/dashboard/build/${template.slug}`}>
-                              <Button variant="primary" size="sm">
+                            <Link href={`/dashboard/build/${template.slug}`} className="flex-1 sm:flex-none">
+                              <Button variant="primary" size="sm" className="w-full">
                                 Preview
                               </Button>
                             </Link>

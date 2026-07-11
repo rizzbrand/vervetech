@@ -54,33 +54,33 @@ export default function AIAssistantPage() {
   };
 
   return (
-    <div className="relative flex min-h-[calc(100dvh-7rem)] flex-col">
+    <div className="relative flex min-h-[calc(100dvh-10rem)] flex-col md:min-h-[calc(100dvh-7rem)]">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(ellipse_at_center,rgba(237,233,254,0.55)_0%,rgba(255,237,213,0.15)_45%,transparent_72%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(88,28,135,0.18)_0%,rgba(30,27,75,0.12)_45%,transparent_72%)]"
         aria-hidden="true"
       />
 
-      <div className="relative flex items-center justify-end gap-2 px-1 pt-1">
+      <div className="relative flex items-center justify-end gap-2 px-0 pt-1 sm:px-1">
         <button
           type="button"
-          className="inline-flex h-9 items-center gap-2 rounded-lg border border-surface-border bg-white px-3 text-sm font-medium text-ink transition-colors hover:bg-surface-muted"
+          className="inline-flex h-9 items-center gap-2 rounded-lg border border-surface-border bg-surface px-3 text-sm font-medium text-ink transition-colors hover:bg-surface-muted"
         >
           <Monitor className="h-4 w-4 text-ink-muted" />
-          Manage
+          <span className="hidden sm:inline">Manage</span>
         </button>
         <button
           type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-surface-border bg-white text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-surface-border bg-surface text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink"
           aria-label="More options"
         >
           <MoreVertical className="h-4 w-4" />
         </button>
       </div>
 
-      <div className="relative flex flex-1 flex-col items-center px-4 pb-6 pt-6 sm:pt-10">
+      <div className="relative flex flex-1 flex-col items-center px-0 pb-4 pt-4 sm:px-4 sm:pb-6 sm:pt-6 md:pt-10">
         {!hasStarted ? (
           <div className="mb-8 max-w-2xl text-center sm:mb-12">
-            <h1 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            <h1 className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl md:text-4xl">
               Hi Divine, how can I help you today?
             </h1>
           </div>
@@ -124,7 +124,7 @@ export default function AIAssistantPage() {
           onSubmit={handleSubmit}
           className="w-full max-w-3xl"
         >
-          <div className="rounded-2xl border border-surface-border bg-white p-4 shadow-card sm:p-5">
+          <div className="rounded-2xl border border-surface-border bg-surface p-3 shadow-card sm:p-5">
             <textarea
               ref={textareaRef}
               value={input}
@@ -135,8 +135,8 @@ export default function AIAssistantPage() {
               className="w-full resize-none bg-transparent text-base text-ink outline-none placeholder:text-ink-faint"
             />
 
-            <div className="mt-4 flex items-center justify-between gap-3">
-              <div className="flex items-center gap-1.5">
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-wrap items-center gap-1.5">
                 <button
                   type="button"
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-surface-border text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink"
@@ -166,7 +166,7 @@ export default function AIAssistantPage() {
                 </button>
               </div>
 
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center justify-end gap-1.5 self-end sm:self-auto">
                 <button
                   type="button"
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink"
