@@ -1,0 +1,257 @@
+.industry-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background-color: #ffffff;
+  color: #0b0b0b;
+  padding-top: 6rem;
+}
+
+.industry-page .industry-hero {
+  padding: 2.25rem 0 2rem;
+  border-bottom: 1px solid rgba(11, 11, 11, 0.08);
+  overflow: hidden;
+}
+
+.industry-page .industry-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.industry-page .industry-hero-content {
+  max-width: 36rem;
+  padding-left: max(2rem, calc((100vw - 2000px) / 2 + 2rem));
+  padding-right: 2rem;
+}
+
+.industry-page .industry-hero-media {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 0;
+}
+
+.industry-page .industry-hero-media img {
+  display: block;
+  width: auto;
+  height: clamp(260px, 34vh, 380px);
+  max-width: min(46vw, 520px);
+  object-fit: contain;
+  object-position: right center;
+}
+
+.industry-page .industry-hero h1 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #0b0b0b;
+  max-width: 18ch;
+}
+
+.industry-page .industry-hero p.lg {
+  margin-top: 1.25rem;
+  max-width: 52ch;
+  color: #0b0b0b;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.industry-page .industry-section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid rgba(11, 11, 11, 0.08);
+}
+
+.industry-page .industry-section:last-of-type {
+  border-bottom: none;
+}
+
+.industry-page .industry-section-label {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(11, 11, 11, 0.45);
+  margin-bottom: 2rem;
+}
+
+.industry-page .industry-build-section {
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+  background-color: #0b0b0b;
+  border-bottom: none;
+}
+
+.industry-page .industry-build-label {
+  margin-bottom: 2.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.industry-page .industry-build-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.industry-page .industry-build-card {
+  min-height: 22rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(11, 11, 11, 0.04);
+  box-shadow: 0 16px 48px rgba(11, 11, 11, 0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.industry-page .industry-build-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 56px rgba(11, 11, 11, 0.1);
+}
+
+.industry-page .industry-build-card-body {
+  flex: 1;
+}
+
+.industry-page .industry-build-card-body h3 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-size: clamp(1.2rem, 1.35vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  color: #0b0b0b;
+}
+
+.industry-page .industry-build-card-body p {
+  margin-top: 1.25rem;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: clamp(0.9rem, 0.95vw, 1rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(11, 11, 11, 0.6);
+}
+
+.industry-page .industry-build-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.industry-page .industry-build-card-label {
+  font-family: "Geist Mono", "PP Neue Montreal", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(11, 11, 11, 0.42);
+}
+
+.industry-page .industry-build-card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(11, 11, 11, 0.14);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0b0b0b;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: border-color 0.18s ease, transform 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.industry-page .industry-build-card-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.industry-page .industry-build-card-arrow:hover {
+  border-color: rgba(11, 11, 11, 0.22);
+  background-color: rgba(11, 11, 11, 0.03);
+  transform: translate(1px, -1px);
+}
+
+@media (max-width: 1000px) {
+  .industry-page {
+    padding-top: 5rem;
+  }
+
+  .industry-page .industry-hero {
+    padding: 2rem 0 1.75rem;
+  }
+
+  .industry-page .industry-hero h1 {
+    max-width: none;
+  }
+
+  .industry-page .industry-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .industry-page .industry-hero-content {
+    max-width: none;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .industry-page .industry-hero-media {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .industry-page .industry-hero-media img {
+    height: auto;
+    max-width: min(78vw, 22rem);
+    max-height: none;
+  }
+
+  .industry-page .industry-build-section {
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .industry-page .industry-build-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .industry-page .industry-build-card {
+    min-height: 20rem;
+    padding: 1.75rem;
+  }
+
+  .industry-page .industry-build-card-body h3 {
+    font-size: 1.25rem;
+  }
+
+  .industry-page .industry-build-card-body p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .industry-page .industry-build-grid {
+    grid-template-columns: 1fr;
+  }
+}

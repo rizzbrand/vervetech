@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-page-bg: #f5f6f8;
+    --color-surface: #ffffff;
+    --color-surface-muted: #f5f6f8;
+    --color-surface-hover: #eceef2;
+    --color-surface-border: #e8eaed;
+    --color-ink: #0b0b0f;
+    --color-ink-muted: #64656b;
+    --color-ink-faint: #9ca0ab;
+    --color-accent: #0b0b0f;
+    --color-accent-hover: #000000;
+    --shadow-soft: 0 1px 2px rgba(11, 11, 15, 0.04), 0 4px 12px rgba(11, 11, 15, 0.04);
+    --shadow-card: 0 1px 3px rgba(11, 11, 15, 0.06), 0 8px 24px rgba(11, 11, 15, 0.06);
+    --scrollbar-thumb: rgba(11, 11, 15, 0.1);
+  }
+
+  :root.dark {
+    --color-page-bg: #0c0c0f;
+    --color-surface: #16161b;
+    --color-surface-muted: #1c1c22;
+    --color-surface-hover: #26262e;
+    --color-surface-border: #2e2e38;
+    --color-ink: #f4f4f5;
+    --color-ink-muted: #a1a1aa;
+    --color-ink-faint: #71717a;
+    --color-accent: #f4f4f5;
+    --color-accent-hover: #ffffff;
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.3);
+    --scrollbar-thumb: rgba(255, 255, 255, 0.14);
+  }
+
+  /* Isolate dashboard from marketing globals.css */
+  .dashboard-root {
+    @apply isolate bg-surface-muted font-sans text-ink antialiased;
+    background-color: var(--color-page-bg);
+  }
+
+  .dashboard-root *,
+  .dashboard-root *::before,
+  .dashboard-root *::after {
+    box-sizing: border-box;
+  }
+
+  .dashboard-root h1,
+  .dashboard-root h2,
+  .dashboard-root h3,
+  .dashboard-root h4 {
+    text-transform: none;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-size: inherit;
+  }
+
+  .dashboard-root p {
+    text-transform: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
+
+  .dashboard-root a {
+    text-decoration: none;
+    text-transform: none;
+    font-family: inherit;
+    letter-spacing: inherit;
+  }
+
+  .dark .dashboard-root input,
+  .dark .dashboard-root textarea,
+  .dark .dashboard-root select {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+  }
+
+  .dark .dashboard-root input::placeholder,
+  .dark .dashboard-root textarea::placeholder {
+    color: var(--color-ink-faint);
+  }
+
+  .dark .dashboard-root .bg-white {
+    background-color: var(--color-surface);
+  }
+
+  .dark .dashboard-root .bg-\[\#f5f6f8\],
+  .dark .dashboard-root .bg-\[\#fafbfc\],
+  .dark .dashboard-root .bg-\[\#eceef2\] {
+    background-color: var(--color-surface-muted);
+  }
+}
+
+@layer components {
+  .dashboard-icon-rail-wrap {
+    @apply flex min-h-0 flex-1 w-16 shrink-0 p-2 pl-2 pr-1;
+  }
+
+  .dashboard-icon-rail {
+    @apply flex h-full w-full flex-col items-center overflow-hidden rounded-2xl border border-ink bg-surface py-3 shadow-soft;
+  }
+
+  .dashboard-sidebar-wrap {
+    @apply flex min-h-0 w-full flex-1 p-2 pl-2 pr-1;
+  }
+
+  .dashboard-sidebar {
+    @apply flex h-full w-full flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface shadow-soft;
+  }
+
+  .dashboard-sidebar-nav {
+    @apply flex min-h-0 flex-1 flex-col gap-0.5 overflow-y-auto py-2;
+  }
+
+  .dashboard-main {
+    @apply min-h-0 min-w-0 flex-1 overflow-y-auto;
+    background-color: var(--color-page-bg);
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .dashboard-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .dashboard-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: var(--scrollbar-thumb);
+  }
+}
+
+html:has(.dashboard-root) body {
+  background: var(--color-page-bg);
+  color: var(--color-ink);
+  overflow: hidden;
+}

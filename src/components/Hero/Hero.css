@@ -1,0 +1,253 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 7.5rem 0 3.25rem;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+  height: auto;
+  align-items: stretch;
+}
+
+.hero-top {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem 5rem;
+  align-items: start;
+}
+
+.hero-headline h1 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(3.25rem, 6.8vw, 6.75rem);
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  color: #0b0b0b;
+  max-width: none;
+}
+
+.hero-headline-line {
+  display: block;
+}
+
+.hero-headline-line--nowrap {
+  white-space: nowrap;
+}
+
+.hero-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.9rem;
+  padding-top: 0.65rem;
+  max-width: 30rem;
+  margin-left: auto;
+}
+
+.hero-aside p {
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.72;
+  color: #0b0b0b;
+  letter-spacing: -0.005em;
+  max-width: 44ch;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 3rem;
+  min-height: 3.4rem;
+  min-width: 12.5rem;
+  background-color: #ff6e14;
+  color: #fff;
+  border-radius: 10rem;
+  text-decoration: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: transform 0.18s ease, background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.hero-cta:hover {
+  background-color: #f06412;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(255, 110, 20, 0.22);
+}
+
+.hero-carousel-section {
+  position: relative;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+.hero-carousel-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+}
+
+.hero-carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid rgba(11, 11, 11, 0.12);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(11, 11, 11, 0.7);
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.hero-carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-color: rgba(11, 11, 11, 0.18);
+  transform: translateY(-1px);
+}
+
+.hero-marquee {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hero-marquee::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  padding: 0 2rem;
+}
+
+.hero-carousel-card {
+  position: relative;
+  flex: 0 0 clamp(240px, 22vw, 320px);
+  width: clamp(240px, 22vw, 320px);
+  aspect-ratio: 3 / 4;
+  border-radius: 2rem;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.hero-carousel-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0) 45%
+  );
+  pointer-events: none;
+}
+
+.hero-carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-carousel-card:hover img {
+  transform: scale(1.04);
+}
+
+.hero-carousel-card-name {
+  position: absolute;
+  bottom: 1.35rem;
+  left: 1.35rem;
+  right: 1.35rem;
+  z-index: 1;
+  color: #fff;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: -0.02rem;
+  text-transform: none;
+  line-height: 1.15;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    padding: 6.25rem 0 2.25rem;
+  }
+
+  .hero .container {
+    gap: 2.5rem;
+  }
+
+  .hero-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-headline h1 {
+    max-width: none;
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .hero-headline-line--nowrap {
+    white-space: normal;
+  }
+
+  .hero-aside {
+    max-width: none;
+    margin-left: 0;
+    gap: 1.5rem;
+  }
+
+  .hero-aside p {
+    font-size: 1.1rem;
+  }
+
+  .hero-carousel-section {
+    width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+
+  .hero-carousel-nav {
+    padding-right: 1.25rem;
+  }
+
+  .hero-marquee-track {
+    padding: 0 1.25rem;
+  }
+
+  .hero-carousel-card {
+    flex: 0 0 72vw;
+    width: 72vw;
+  }
+
+  .hero-carousel-card-name {
+    font-size: 1.35rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
+  }
+}

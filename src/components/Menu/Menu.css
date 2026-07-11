@@ -1,0 +1,686 @@
+nav.marketing-nav {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1280px, calc(100vw - 2.5rem));
+  padding: 0.6rem 1rem 0.6rem 1.25rem;
+  color: #0b0b0b;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(11, 11, 11, 0.08);
+  border-radius: 1rem;
+  box-shadow:
+    0 1px 2px rgba(11, 11, 11, 0.04),
+    0 8px 28px rgba(11, 11, 11, 0.07);
+}
+
+nav.marketing-nav .nav-logo {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  justify-self: start;
+  display: block;
+}
+
+nav.marketing-nav .nav-logo a {
+  display: block;
+  width: auto;
+}
+
+nav.marketing-nav .nav-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+nav.marketing-nav .nav-logo .nav-logo-text {
+  width: auto;
+  color: #0b0b0b;
+  text-decoration: none;
+  text-transform: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+nav.marketing-nav .nav-logo .nav-logo-text:hover {
+  opacity: 0.65;
+}
+
+nav.marketing-nav .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  justify-self: center;
+}
+
+nav.marketing-nav .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.35rem;
+  margin-left: 0.35rem;
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  background: #0b0b0b;
+  color: #fff;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 2px rgba(11, 11, 11, 0.12);
+}
+
+nav.marketing-nav .nav-cta:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+nav.marketing-nav .nav-toggle {
+  position: relative;
+  right: auto;
+  top: auto;
+  transform: none;
+  justify-self: end;
+}
+
+nav.marketing-nav .nav-link {
+  position: relative;
+  color: #0b0b0b;
+  text-decoration: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.65rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav.marketing-nav .nav-link--has-dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+nav.marketing-nav .nav-link-chevron {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  opacity: 0.55;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+nav.marketing-nav .nav-dropdown:hover .nav-link-chevron,
+nav.marketing-nav .nav-dropdown--open .nav-link-chevron {
+  transform: rotate(180deg);
+  opacity: 0.85;
+}
+
+nav.marketing-nav .nav-link::after {
+  display: none;
+}
+
+nav.marketing-nav .nav-link:hover,
+nav.marketing-nav .nav-link--active,
+nav.marketing-nav .nav-dropdown--open .nav-link,
+nav.marketing-nav .nav-dropdown:hover .nav-link {
+  background: rgba(11, 11, 11, 0.05);
+}
+
+nav.marketing-nav .nav-link--active {
+  font-weight: 500;
+}
+
+nav.marketing-nav .nav-dropdown {
+  position: relative;
+}
+
+nav.marketing-nav .nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 0.85rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(0.5rem);
+  width: min(980px, calc(100vw - 4rem));
+  padding: 2.25rem 2.5rem 2.5rem;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(11, 11, 11, 0.08);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 56px rgba(11, 11, 11, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+nav.marketing-nav .nav-dropdown-panel::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-left: 1px solid rgba(11, 11, 11, 0.08);
+  border-top: 1px solid rgba(11, 11, 11, 0.08);
+  transform: translateX(-50%) rotate(45deg);
+  pointer-events: none;
+}
+
+nav.marketing-nav .nav-dropdown--open .nav-dropdown-panel,
+nav.marketing-nav .nav-dropdown:hover .nav-dropdown-panel,
+nav.marketing-nav .nav-dropdown:focus-within .nav-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+nav.marketing-nav .nav-dropdown--open .nav-link::after,
+nav.marketing-nav .nav-dropdown:hover .nav-link::after {
+  display: none;
+}
+
+nav.marketing-nav .nav-dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+}
+
+nav.marketing-nav .nav-dropdown-col {
+  display: flex;
+  flex-direction: column;
+}
+
+nav.marketing-nav .nav-dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+nav.marketing-nav .nav-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav.marketing-nav .nav-dropdown-item-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+nav.marketing-nav .nav-dropdown-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(11, 11, 11, 0.05);
+  color: rgba(11, 11, 11, 0.65);
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+nav.marketing-nav .nav-dropdown-item-icon svg {
+  display: block;
+}
+
+nav.marketing-nav .nav-dropdown-item-title {
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #0b0b0b;
+  line-height: 1.45;
+}
+
+nav.marketing-nav .nav-dropdown-item-desc {
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(11, 11, 11, 0.72);
+  letter-spacing: -0.005em;
+}
+
+nav.marketing-nav .nav-dropdown-item:hover .nav-dropdown-item-title {
+  color: #0b0b0b;
+}
+
+nav.marketing-nav .nav-dropdown-item:hover .nav-dropdown-item-icon {
+  background: rgba(255, 110, 20, 0.1);
+  color: #ff6e14;
+}
+
+nav.marketing-nav .nav-dropdown-item:hover .nav-dropdown-item-desc {
+  color: rgba(11, 11, 11, 0.85);
+}
+
+nav.marketing-nav .nav-dropdown-panel--resources {
+  width: min(760px, calc(100vw - 4rem));
+  padding: 0;
+  overflow: hidden;
+}
+
+nav.marketing-nav .nav-resources-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(220px, 1fr);
+  gap: 2.5rem;
+  padding: 2.25rem 2.5rem 2rem;
+}
+
+nav.marketing-nav .nav-resources-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+nav.marketing-nav .nav-resources-link {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  color: #0b0b0b;
+  text-decoration: none;
+  transition: opacity 0.18s ease;
+}
+
+nav.marketing-nav .nav-resources-link:hover {
+  opacity: 0.55;
+}
+
+nav.marketing-nav .nav-resources-featured {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav.marketing-nav .nav-resources-featured-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+nav.marketing-nav .nav-resources-featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.92;
+  transition: transform 0.35s ease;
+}
+
+nav.marketing-nav .nav-resources-featured:hover .nav-resources-featured-media img {
+  transform: scale(1.03);
+}
+
+nav.marketing-nav .nav-resources-featured-overlay {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+nav.marketing-nav .nav-resources-featured-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+nav.marketing-nav .nav-resources-featured-time {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.75rem;
+  color: rgba(11, 11, 11, 0.45);
+}
+
+nav.marketing-nav .nav-resources-featured-tag {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(11, 11, 11, 0.12);
+  border-radius: 999px;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #0b0b0b;
+}
+
+nav.marketing-nav .nav-resources-featured-title {
+  margin: 0;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: rgba(11, 11, 11, 0.72);
+}
+
+nav.marketing-nav .nav-resources-social {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1rem 2.5rem;
+  background: rgba(11, 11, 11, 0.04);
+  border-top: 1px solid rgba(11, 11, 11, 0.06);
+}
+
+nav.marketing-nav .nav-resources-social-link {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #0b0b0b;
+  text-decoration: none;
+  transition: opacity 0.18s ease;
+}
+
+nav.marketing-nav .nav-resources-social-link:hover {
+  opacity: 0.55;
+}
+
+nav.marketing-nav .nav-toggle {
+  cursor: pointer;
+  display: none;
+}
+
+nav.marketing-nav .nav-toggle--mobile {
+  display: none;
+}
+
+nav.marketing-nav .nav-toggle-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 2.5rem;
+  overflow: hidden;
+  background-color: rgba(11, 11, 11, 0.05);
+  border: 1px solid rgba(11, 11, 11, 0.08);
+  border-radius: 0.75rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 2;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+nav.marketing-nav .nav-toggle-wrapper:hover {
+  background-color: rgba(11, 11, 11, 0.08);
+}
+
+nav.marketing-nav .open-label,
+nav.marketing-nav .close-label {
+  position: relative;
+  text-transform: uppercase;
+  font-family: "PP Pangram Sans";
+  font-size: 0.8rem;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  cursor: pointer;
+  padding: 0.8rem;
+  color: #0b0b0b;
+  margin: 0;
+  will-change: transform;
+  transform: translateY(0);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  background-color: var(--base-400);
+  color: var(--base-100);
+  z-index: 1;
+  will-change: clip-path;
+}
+
+.menu-overlay .menu-content {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  will-change: transform, opacity;
+}
+
+.menu-overlay .menu-content p,
+.menu-overlay .menu-content a {
+  text-transform: uppercase;
+  font-family: "PP Neue Montreal";
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+  color: var(--base-100);
+}
+
+.menu-overlay .menu-col:nth-child(2) {
+  text-align: right;
+}
+
+.menu-overlay .menu-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menu-overlay .menu-col a,
+.menu-overlay .menu-col p {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+}
+
+.menu-overlay .split-line {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.menu-overlay .split-line-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.menu-overlay .menu-img {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  aspect-ratio: 5/7;
+  will-change: transform, opacity;
+}
+
+.menu-overlay .menu-img img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.menu-overlay .menu-links-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: max-content;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  will-change: transform;
+}
+
+.menu-overlay .menu-link {
+  position: relative;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.menu-overlay .menu-link a {
+  position: relative;
+  color: var(--base-100);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 10rem;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.125rem;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.menu-overlay .menu-link a span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.menu-overlay .link-highlighter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 0.75rem;
+  background-color: var(--base-500);
+  will-change: transform, width;
+}
+
+.menu-overlay {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.menu-overlay .char {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+
+@media (max-width: 1000px) {
+  nav.marketing-nav {
+    top: 1rem;
+    width: calc(100vw - 1.5rem);
+    padding: 0.55rem 0.75rem 0.55rem 1rem;
+    border-radius: 0.9rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    justify-content: space-between;
+  }
+
+  nav.marketing-nav .nav-logo {
+    position: static;
+    transform: none;
+  }
+
+  nav.marketing-nav .nav-toggle {
+    position: static;
+    transform: none;
+  }
+
+  nav.marketing-nav .nav-logo .nav-logo-text {
+    font-size: 1.1rem;
+    max-width: calc(100vw - 8rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  nav.marketing-nav .nav-toggle--mobile {
+    display: block;
+  }
+
+  nav.marketing-nav,
+  .menu-overlay .menu-links-wrapper {
+    padding: 1.25rem;
+  }
+
+  nav.marketing-nav {
+    padding: 0.55rem 0.75rem 0.55rem 1rem;
+  }
+
+  nav.marketing-nav .nav-links {
+    display: none;
+  }
+
+  nav.marketing-nav .nav-dropdown-panel {
+    display: none;
+  }
+
+  nav.marketing-nav .nav-dropdown-panel--resources {
+    display: none;
+  }
+
+  .menu-overlay .menu-content {
+    display: none;
+  }
+
+  .menu-overlay .menu-img,
+  .menu-overlay .link-highlighter {
+    display: none;
+  }
+
+  .menu-overlay .menu-links-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .menu-overlay .menu-link a {
+    font-size: 4rem;
+    letter-spacing: -0.05rem;
+  }
+}
+
+@media (min-width: 2400px) {
+  .menu-overlay .menu-link a {
+    font-size: 20rem;
+  }
+}

@@ -1,0 +1,89 @@
+.content-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background-color: #ffffff;
+  padding-top: 6rem;
+}
+
+.content-page .content-header {
+  padding: 4rem 0 3rem;
+}
+
+.content-page .content-header h1 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #0b0b0b;
+  max-width: 18ch;
+}
+
+.content-page .content-header p.lg {
+  margin-top: 1.5rem;
+  max-width: 52ch;
+  color: #0b0b0b;
+  font-family: "PP Neue Montreal", sans-serif;
+  line-height: 1.6;
+}
+
+.content-page .content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  padding: 2rem 0 6rem;
+}
+
+.content-page .content-card {
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background-color: var(--base-100);
+  border: 1px solid var(--base-200);
+}
+
+.content-page .content-card--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.content-page .content-card--link:hover {
+  border-color: rgba(11, 11, 11, 0.2);
+  transform: translateY(-2px);
+}
+
+.content-page .content-card h3 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #0b0b0b;
+}
+
+.content-page .content-card p {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(11, 11, 11, 0.72);
+}
+
+@media (max-width: 1000px) {
+  .content-page {
+    padding-top: 5rem;
+  }
+
+  .content-page .content-header {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .content-page .content-grid {
+    grid-template-columns: 1fr;
+    padding-bottom: 4rem;
+  }
+}

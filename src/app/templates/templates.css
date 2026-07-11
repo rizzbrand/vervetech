@@ -1,0 +1,237 @@
+.templates-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background-color: #ffffff;
+  color: #0b0b0b;
+  padding-top: 6rem;
+}
+
+.templates-page .templates-hero {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1.5px solid rgba(11, 11, 11, 0.14);
+}
+
+.templates-page .templates-hero h1 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #0b0b0b;
+  max-width: 20ch;
+}
+
+.templates-page .templates-hero p.lg {
+  margin-top: 1.5rem;
+  max-width: 58ch;
+  color: #0b0b0b;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+.templates-page .templates-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1.75rem 0;
+  border-bottom: 1.5px solid rgba(11, 11, 11, 0.14);
+}
+
+.templates-page .templates-filter-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 10rem;
+  border: 1px solid rgba(11, 11, 11, 0.1);
+  background: rgba(11, 11, 11, 0.04);
+  color: #0b0b0b;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.templates-page .templates-filter-btn:hover {
+  background: rgba(11, 11, 11, 0.07);
+  border-color: rgba(11, 11, 11, 0.18);
+}
+
+.templates-page .templates-filter-btn--active {
+  background: #0b0b0b;
+  border-color: #0b0b0b;
+  color: #ffffff;
+}
+
+.templates-page .templates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding: 2rem 0 6rem;
+}
+
+.templates-page .templates-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(11, 11, 11, 0.08);
+  background: #ffffff;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.templates-page .templates-card:hover {
+  border-color: rgba(11, 11, 11, 0.14);
+  box-shadow: 0 16px 48px rgba(11, 11, 11, 0.06);
+}
+
+.templates-page .templates-card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+.templates-page .templates-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.templates-page .templates-card:hover .templates-card-media img {
+  transform: scale(1.03);
+}
+
+.templates-page .templates-card-industry {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: #eeeeee;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0b0b0b;
+}
+
+.templates-page .templates-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.templates-page .templates-card-body h2 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: #0b0b0b;
+}
+
+.templates-page .templates-card-body p {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(11, 11, 11, 0.72);
+}
+
+.templates-page .templates-card-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.templates-page .templates-card-features li {
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(11, 11, 11, 0.05);
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.6875rem;
+  color: rgba(11, 11, 11, 0.65);
+}
+
+.templates-page .templates-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.templates-page .templates-card-price {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #0b0b0b;
+}
+
+.templates-page .templates-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-radius: 10rem;
+  background-color: #ff6e14;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.templates-page .templates-card-cta:hover {
+  background-color: #f06412;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1000px) {
+  .templates-page {
+    padding-top: 5rem;
+  }
+
+  .templates-page .templates-hero {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .templates-page .templates-hero h1 {
+    max-width: none;
+  }
+
+  .templates-page .templates-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 2rem 0 4rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .templates-page .templates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .templates-page .templates-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .templates-page .templates-card-cta {
+    width: 100%;
+  }
+}
