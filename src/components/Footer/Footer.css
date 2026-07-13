@@ -1,112 +1,141 @@
-footer {
+.site-footer {
   position: relative;
-  width: 100vw;
-  height: 100.5svh;
-  background-color: var(--base-400);
-  color: var(--base-100);
+  width: 100%;
+  min-height: 100svh;
+  background-color: #0b0b0b;
+  color: #ffffff;
   padding: 2rem;
+  overflow: clip;
 }
 
-footer .explosion-container {
+.site-footer .footer-shapes {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
+  inset: 0;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
 
-footer img.explosion-particle-img {
+.site-footer .footer-shape {
   position: absolute;
-  bottom: -200px;
-  left: 50%;
-  width: var(--particle-size, 300px) !important;
-  height: auto !important;
-  border-radius: 1rem;
-  object-fit: cover;
-  transform: translateX(-50%);
-  will-change: transform;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.95;
+  will-change: left, top, background-image;
 }
 
-.sample-project-page footer img.explosion-particle-img {
-  width: var(--particle-size, 300px) !important;
-  height: auto !important;
+.site-footer .site-footer-inner {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100svh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-footer .footer-header-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
+.site-footer .footer-header-content {
+  flex: 1;
+  width: min(48rem, 100%);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 2rem;
+  padding: 4rem 0;
 }
 
-footer .footer-byline {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.site-footer .footer-header h2 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: #ffffff;
+  max-width: 12ch;
+}
+
+.site-footer .footer-link {
+  display: flex;
+  justify-content: center;
+}
+
+.site-footer .footer-link .button-label {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.site-footer .footer-byline {
   width: 100%;
   display: flex;
-  padding: 2rem;
+  padding-top: 1rem;
 }
 
-footer .footer-byline > div {
+.site-footer .footer-byline > div {
   flex: 1;
   display: flex;
 }
 
-footer .footer-copyright {
+.site-footer .footer-copyright {
   justify-content: flex-end;
 }
 
-footer .footer-author {
+.site-footer .footer-author {
   justify-content: center;
-  color: var(--base-300);
+  color: rgba(255, 255, 255, 0.45);
 }
 
-footer .footer-time {
-  color: var(--base-300);
+.site-footer .footer-time {
+  color: rgba(255, 255, 255, 0.45);
   justify-content: flex-start;
 }
 
-footer .footer-time span {
-  color: var(--base-100);
+.site-footer .footer-time span {
+  color: #ffffff;
 }
 
-footer .footer-byline p {
+.site-footer .footer-byline p {
+  font-family: "PP Neue Montreal", sans-serif;
   font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 @media (max-width: 1000px) {
-  footer {
-    height: 100svh;
+  .site-footer {
+    min-height: 100svh;
+    padding: 1.25rem;
   }
 
-  footer .explosion-container {
+  .site-footer .footer-shapes {
     display: none;
   }
 
-  footer .footer-header-content {
-    width: 100%;
-    padding: 1.25rem;
+  .site-footer .site-footer-inner {
+    min-height: calc(100svh - 2.5rem);
   }
 
-  footer .footer-copyright {
+  .site-footer .footer-header-content {
+    width: 100%;
+    padding: 3rem 0;
+  }
+
+  .site-footer .footer-header h2 {
+    max-width: none;
+  }
+
+  .site-footer .footer-copyright {
     display: none !important;
   }
 
-  footer .footer-author {
+  .site-footer .footer-author {
     justify-content: flex-end;
-  }
-
-  footer .footer-byline {
-    padding: 1.25rem;
   }
 }

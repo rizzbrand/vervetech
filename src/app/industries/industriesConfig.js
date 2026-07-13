@@ -588,6 +588,195 @@ export const industriesBySlug = {
       buttonHref: "/contact",
     },
   },
+  startups: {
+    slug: "startups",
+    title: "For Startups",
+    hero: {
+      headline: "Startup products built to launch and learn fast",
+      image: "/studio/moodify.jpeg",
+      imageAlt: "Startup product launch and MVP platform interface",
+      imageFit: "cover",
+    },
+    intro:
+      "From first MVP to early traction — we help founders ship sharp products, validate faster, and build a foundation that can grow without a rewrite every six months.",
+    highlights: [
+      {
+        value: "Speed to market",
+        label: "Ship the version that matters",
+      },
+      {
+        value: "Lean by design",
+        label: "No bloated first builds",
+      },
+      {
+        value: "Ready to grow",
+        label: "Architecture that can scale",
+      },
+    ],
+    capabilities: [
+      {
+        title: "MVP & Launch",
+        description:
+          "Focused first products that prove the idea — clean UX, core workflows, and enough polish to win early users and investors.",
+        label: "Launch",
+        icon: "mvp",
+      },
+      {
+        title: "Product-Market Fit Systems",
+        description:
+          "Onboarding, feedback loops, and analytics that help you learn what to double down on — and what to cut.",
+        label: "Learn",
+        icon: "pmf",
+      },
+      {
+        title: "Founding Stack",
+        description:
+          "Brand, website, and product systems that feel coherent from day one — so your company looks ready even when the team is small.",
+        label: "Build",
+        icon: "founding",
+      },
+      {
+        title: "Go-to-Market Foundations",
+        description:
+          "Landing pages, waitlists, CRM basics, and campaign tooling that help you start selling before you overbuild.",
+        label: "Sell",
+        icon: "gtm",
+      },
+    ],
+    cta: {
+      title: "Building as a startup?",
+      description:
+        "If you need an MVP, a sharper product story, or a stack that can grow with you — we'll help you ship something real without wasting runway.",
+      buttonLabel: "Start a conversation",
+      buttonHref: "/contact",
+    },
+  },
+  scaleups: {
+    slug: "scaleups",
+    title: "For Scaleups",
+    hero: {
+      headline: "Scaleup systems built for the next stage of growth",
+      image: "/studio/salesync.jpeg",
+      imageAlt: "Scaleup growth platform and operations dashboard",
+      imageFit: "cover",
+    },
+    intro:
+      "From product redesign to growth ops — we help scaling companies upgrade the systems that got them here into platforms that can handle the next leap in users, revenue, and team size.",
+    highlights: [
+      {
+        value: "Growth-ready",
+        label: "Systems that keep up with demand",
+      },
+      {
+        value: "Less chaos",
+        label: "Ops and product that scale cleanly",
+      },
+      {
+        value: "Team leverage",
+        label: "Tools that multiply output",
+      },
+    ],
+    capabilities: [
+      {
+        title: "Platform Redesign",
+        description:
+          "Rebuild or evolve the product experience for the stage you're entering — better architecture, clearer UX, and room to grow.",
+        label: "Upgrade",
+        icon: "redesign",
+      },
+      {
+        title: "Growth Systems",
+        description:
+          "Acquisition, activation, and retention tooling that turns product usage into compounding growth — not one-off campaigns.",
+        label: "Grow",
+        icon: "growthOps",
+      },
+      {
+        title: "Ops & Automation",
+        description:
+          "Internal workflows, AI agents, and integrations that reduce manual work as volume and complexity rise.",
+        label: "Operate",
+        icon: "systems",
+      },
+      {
+        title: "Team Expansion Tools",
+        description:
+          "Dashboards, permissions, and collaboration systems that keep larger teams aligned without slowing decisions down.",
+        label: "Scale",
+        icon: "teamScale",
+      },
+    ],
+    cta: {
+      title: "Scaling past the early stage?",
+      description:
+        "If your product, ops, or go-to-market is starting to strain — we'll help you redesign for the growth stage you're entering.",
+      buttonLabel: "Start a conversation",
+      buttonHref: "/contact",
+    },
+  },
+  enterprise: {
+    slug: "enterprise",
+    title: "For Enterprise",
+    hero: {
+      headline: "Enterprise systems built for performance and trust",
+      image: "/studio/fintech.jpeg",
+      imageAlt: "Enterprise operations and AI workflow platform",
+      imageFit: "cover",
+    },
+    intro:
+      "From AI readiness to secure platform delivery — we design and build enterprise products that meet compliance expectations, integrate with complex stacks, and hold up under real operational load.",
+    highlights: [
+      {
+        value: "Performance",
+        label: "Systems that hold under load",
+      },
+      {
+        value: "Compliance-ready",
+        label: "Security and governance built in",
+      },
+      {
+        value: "AI at scale",
+        label: "Automation teams can trust",
+      },
+    ],
+    capabilities: [
+      {
+        title: "Platform Performance",
+        description:
+          "Architecture, reliability, and experience upgrades that keep enterprise products fast, available, and ready for heavier usage.",
+        label: "Perform",
+        icon: "performance",
+      },
+      {
+        title: "Security & Governance",
+        description:
+          "Access controls, audit trails, and compliance-minded patterns designed for procurement, risk, and IT review.",
+        label: "Govern",
+        icon: "governance",
+      },
+      {
+        title: "Enterprise AI",
+        description:
+          "Agents, copilots, and workflow automation deployed with clear ownership, observability, and production safeguards.",
+        label: "Automate",
+        icon: "enterpriseAi",
+      },
+      {
+        title: "Systems Integration",
+        description:
+          "CRM, ERP, identity, and data-layer integrations that connect new products to the systems your organization already runs.",
+        label: "Connect",
+        icon: "integration",
+      },
+    ],
+    cta: {
+      title: "Modernizing for enterprise?",
+      description:
+        "Whether you need AI readiness, platform modernization, or secure delivery across teams — we'll help you ship systems that scale with confidence.",
+      buttonLabel: "Start a conversation",
+      buttonHref: "/contact",
+    },
+  },
 };
 
 export const getIndustry = (slug) => industriesBySlug[slug] ?? null;
@@ -608,6 +797,10 @@ export const industryMenuRoutes = {
   "Automobile industry": "/industries/automobile",
   "Automobile Industry": "/industries/automobile",
   Healthtech: "/industries/healthtech",
+  "For Startups": "/industries/startups",
+  "For Scaleups": "/industries/scaleups",
+  "For Enterprise": "/industries/enterprise",
+  Enterprise: "/industries/enterprise",
 };
 
 export const getIndustryMenuRoute = (title) =>

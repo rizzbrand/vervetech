@@ -106,11 +106,11 @@ const Hero = () => {
             </Copy>
 
             <a
-              href="/onboarding"
+              href="/contact"
               className="hero-cta"
               onClick={(e) => {
                 e.preventDefault();
-                navigateWithTransition("/onboarding");
+                navigateWithTransition("/contact");
               }}
             >
               Get started

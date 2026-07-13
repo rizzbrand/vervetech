@@ -1,77 +1,330 @@
 .studio-page {
   position: relative;
   width: 100%;
-  height: 100%;
   min-height: 100svh;
-  background-color: var(--base-100);
+  background-color: #ffffff;
+  color: #0b0b0b;
+  padding-top: 6rem;
 }
 
-.studio-page .studio-header {
-  position: relative;
-  width: 100%;
-  height: 90svh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.studio-page .studio-hero {
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1.5px solid rgba(11, 11, 11, 0.14);
 }
 
-.studio-page .studio-header .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.studio-page .studio-eyebrow {
+  margin-bottom: 0.85rem;
+  font-family: "Geist Mono", "PP Neue Montreal", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11, 11, 11, 0.45);
 }
 
-.studio-page .studio-header .container .studio-header-row:nth-child(1) {
-  display: flex;
-  justify-content: flex-end;
+.studio-page .studio-hero h1 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #0b0b0b;
+  max-width: 16ch;
 }
 
-.studio-page .studio-header .container .studio-header-row:nth-child(2) {
-  display: flex;
-  justify-content: flex-start;
+.studio-page .studio-hero p.lg {
+  margin-top: 1.35rem;
+  max-width: 52ch;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: rgba(11, 11, 11, 0.68);
 }
 
-.studio-page .studio-header .container .studio-header-row h1 {
-  font-size: 14vw;
+.studio-page .studio-story {
+  padding: 4.5rem 0 5.5rem;
 }
 
-.studio-page .studio-copy .container {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  padding-bottom: 10rem;
+.studio-page .studio-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3.5rem 4.5rem;
+  align-items: start;
 }
 
-.studio-page .studio-copy .studio-copy-img {
-  width: 30%;
-  margin: 0 auto;
-  border-radius: 0.75rem;
+.studio-page .studio-story-media {
+  position: sticky;
+  top: 7rem;
+  border-radius: 1.35rem;
   overflow: hidden;
-  margin-bottom: 4rem;
+  background: #f6f6f6;
+  aspect-ratio: 4 / 5;
 }
 
-.studio-page .studio-copy .studio-copy-img img {
+.studio-page .studio-story-media img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.studio-page .studio-copy p {
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
-  margin-bottom: 4rem;
+.studio-page .studio-story-copy h2 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #0b0b0b;
+  max-width: 16ch;
+}
+
+.studio-page .studio-story-copy p {
+  margin-top: 1.15rem;
+  max-width: 44ch;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(11, 11, 11, 0.65);
+}
+
+.studio-page .studio-focus {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(11, 11, 11, 0.1);
+}
+
+.studio-page .studio-focus-label {
+  margin-bottom: 1rem;
+  font-family: "Geist Mono", "PP Neue Montreal", monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11, 11, 11, 0.42);
+}
+
+.studio-page .studio-focus-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.studio-page .studio-focus-list li {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(11, 11, 11, 0.05);
+  border: 1px solid rgba(11, 11, 11, 0.06);
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.85rem;
+  color: #0b0b0b;
+}
+
+.studio-page .studio-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.25rem;
+  min-height: 3.15rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  background: #ff6e14;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.studio-page .studio-cta:hover {
+  background: #f06412;
+  transform: translateY(-1px);
+}
+
+.studio-page .studio-section-label {
+  margin-bottom: 1.5rem;
+  font-family: "Geist Mono", "PP Neue Montreal", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11, 11, 11, 0.45);
+}
+
+.studio-page .studio-principles {
+  padding: 5rem 0;
+  background: #f6f6f6;
+  border-top: 1px solid rgba(11, 11, 11, 0.06);
+  border-bottom: 1px solid rgba(11, 11, 11, 0.06);
+}
+
+.studio-page .studio-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 4rem;
+}
+
+.studio-page .studio-principle-label {
+  margin-bottom: 0.85rem;
+  font-family: "Geist Mono", "PP Neue Montreal", monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--base-500);
+}
+
+.studio-page .studio-principle h2 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #0b0b0b;
+  max-width: 14ch;
+}
+
+.studio-page .studio-principle p {
+  margin-top: 1rem;
+  max-width: 40ch;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(11, 11, 11, 0.65);
+}
+
+.studio-page .studio-evolution {
+  padding: 5.5rem 0 6rem;
+}
+
+.studio-page .studio-evolution-header {
+  max-width: 40rem;
+  margin-bottom: 3rem;
+}
+
+.studio-page .studio-evolution-header h2 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #0b0b0b;
+}
+
+.studio-page .studio-evolution-header p {
+  margin-top: 1rem;
+  max-width: 44ch;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(11, 11, 11, 0.62);
+}
+
+.studio-page .studio-evolution-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(11, 11, 11, 0.1);
+}
+
+.studio-page .studio-evolution-item {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 1.5rem 2.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(11, 11, 11, 0.1);
+}
+
+.studio-page .studio-evolution-phase {
+  font-family: "Geist Mono", "PP Neue Montreal", monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(11, 11, 11, 0.38);
+  padding-top: 0.35rem;
+}
+
+.studio-page .studio-evolution-copy h3 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: #0b0b0b;
+}
+
+.studio-page .studio-evolution-copy p {
+  margin-top: 0.7rem;
+  max-width: 52ch;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(11, 11, 11, 0.62);
 }
 
 @media (max-width: 1000px) {
-  .studio-page .studio-copy .studio-copy-img,
-  .studio-page .studio-copy p {
+  .studio-page {
+    padding-top: 5rem;
+  }
+
+  .studio-page .studio-hero {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .studio-page .studio-hero h1 {
+    max-width: none;
+  }
+
+  .studio-page .studio-story {
+    padding: 3rem 0 4rem;
+  }
+
+  .studio-page .studio-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .studio-page .studio-story-media {
+    position: static;
+    aspect-ratio: 16 / 10;
+  }
+
+  .studio-page .studio-story-copy h2 {
+    max-width: none;
+  }
+
+  .studio-page .studio-cta {
     width: 100%;
   }
-}
 
-@media (min-width: 2400px) {
-  .studio-page .studio-header .container .studio-header-row h1  {
-    font-size: 20rem;
+  .studio-page .studio-principles {
+    padding: 3.5rem 0;
+  }
+
+  .studio-page .studio-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .studio-page .studio-principle h2 {
+    max-width: none;
+  }
+
+  .studio-page .studio-evolution {
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .studio-page .studio-evolution-item {
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 1rem 1.25rem;
+    padding: 1.5rem 0;
   }
 }

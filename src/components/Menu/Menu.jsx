@@ -39,7 +39,7 @@ const Menu = ({ pageRef }) => {
 
   const menuItems = [
     { label: "Home", route: "/" },
-    { label: "Templates", route: "/templates" },
+    { label: "Portfolio", route: "/templates" },
     { label: "Industries", route: "/industries" },
     { label: "Companies", route: "/companies" },
     { label: "Resources", route: "/studio" },
@@ -709,7 +709,7 @@ const Menu = ({ pageRef }) => {
             className="nav-logo-text"
             onClick={handleLogoClick}
           >
-           Sky Land Technologies
+           Sky Land Technology
           </a>
         </div>
 
@@ -719,11 +719,11 @@ const Menu = ({ pageRef }) => {
 
         <div className="nav-actions">
           <a
-            href="/onboarding"
+            href="/contact"
             className="nav-cta"
             onClick={(e) => {
               e.preventDefault();
-              navigateWithTransition("/onboarding");
+              navigateWithTransition("/contact");
             }}
           >
             Get started

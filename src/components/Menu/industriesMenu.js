@@ -77,13 +77,13 @@ export const industriesMenuColumns = [
       {
         title: "For Startups",
         description: "Launch fast with products that scale with you",
-        route: "/industries",
+        route: getIndustryMenuRoute("For Startups"),
         icon: "startup",
       },
       {
         title: "For Scaleups",
         description: "Redesign for the growth stage you're entering",
-        route: "/industries",
+        route: getIndustryMenuRoute("For Scaleups"),
         icon: "scaleup",
       },
       {
@@ -95,7 +95,7 @@ export const industriesMenuColumns = [
       {
         title: "For Enterprise",
         description: "Performance, compliance, and AI readiness at scale",
-        route: "/industries",
+        route: getIndustryMenuRoute("For Enterprise"),
         icon: "enterprise-size",
       },
       {

@@ -1,6 +1,8 @@
 "use client";
 import "./home.css";
 import Hero from "@/components/Hero/Hero";
+import Difference from "@/components/Difference/Difference";
+import Method from "@/components/Method/Method";
 import Footer from "@/components/Footer/Footer";
 import Preloader, { PRELOADER_ENABLED } from "@/components/Preloader/Preloader";
 import React, { useEffect } from "react";
@@ -28,6 +30,8 @@ const Page = () => {
     <>
       {PRELOADER_ENABLED && <Preloader />}
       <Hero />
+      <Difference />
+      <Method />
       <Footer />
     </>
   );

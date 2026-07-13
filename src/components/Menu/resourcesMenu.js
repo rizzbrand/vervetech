@@ -1,6 +1,6 @@
 export const resourcesMenuItems = [
   { title: "About", route: "/studio" },
-  { title: "Templates", route: "/templates" },
+  { title: "Portfolio", route: "/templates" },
   { title: "Join Us", route: "/contact" },
   { title: "Blog", route: "/stories" },
   { title: "Contact", route: "/contact" },

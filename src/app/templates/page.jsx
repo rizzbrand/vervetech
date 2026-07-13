@@ -20,13 +20,11 @@ const Page = () => {
       <section className="templates-hero">
         <div className="container">
           <Copy delay={0.8}>
-            <h1>
-              SaaS templates to launch your next company
-            </h1>
+            <h1>Portfolio work across industries</h1>
             <p className="lg">
-              Ready-made product templates for property marketplaces, car
+              Selected product builds for property marketplaces, car
               dealerships, restaurants, fintech, AI automation, and more —
-              buy, customize, and go live faster.
+              explore the systems we&apos;ve shipped.
             </p>
           </Copy>
         </div>

@@ -61,6 +61,24 @@ const industries = [
       "Compliant digital products for providers — patient experiences, clinical workflows, and telehealth.",
   },
   {
+    name: "For Startups",
+    slug: "startups",
+    description:
+      "MVPs, founding stacks, and go-to-market foundations for teams launching fast.",
+  },
+  {
+    name: "For Scaleups",
+    slug: "scaleups",
+    description:
+      "Platform redesign, growth systems, and ops tooling for the next stage of scale.",
+  },
+  {
+    name: "For Enterprise",
+    slug: "enterprise",
+    description:
+      "Performance, compliance, and AI-ready systems for large organizations.",
+  },
+  {
     name: "Brand & Media",
     description:
       "Digital experiences, identity systems, and product design for modern media companies.",
