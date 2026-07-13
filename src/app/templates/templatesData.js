@@ -9,6 +9,43 @@ export const templateFilters = [
   "Marketplace",
 ];
 
+const industryLinks = {
+  Proptech: {
+    route: "/industries/real-estate",
+    label: "Explore Real Estate",
+  },
+  Automotive: {
+    route: "/industries/automobile",
+    label: "Explore Automobile",
+  },
+  Restaurant: {
+    route: "/industries/e-commerce",
+    label: "Explore E-commerce",
+  },
+  Fintech: {
+    route: "/industries/fintech",
+    label: "Explore Fintech",
+  },
+  Creator: {
+    route: "/industries/creator-economy",
+    label: "Explore Creator Economy",
+  },
+  "AI SaaS": {
+    route: "/industries/ai-technology",
+    label: "Explore AI & Technology",
+  },
+  Marketplace: {
+    route: "/industries/e-commerce",
+    label: "Explore E-commerce",
+  },
+};
+
+export const getTemplateIndustryLink = (industry) =>
+  industryLinks[industry] ?? {
+    route: "/industries",
+    label: "Explore industries",
+  };
+
 export const templates = [
   {
     slug: "property-marketplace",

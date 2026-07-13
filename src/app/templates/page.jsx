@@ -4,7 +4,7 @@ import Footer from "@/components/Footer/Footer";
 import Copy from "@/components/Copy/Copy";
 import { useMemo, useState } from "react";
 import { useViewTransition } from "@/hooks/useViewTransition";
-import { templateFilters, templates } from "./templatesData";
+import { templateFilters, templates, getTemplateIndustryLink } from "./templatesData";
 
 const Page = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -48,7 +48,10 @@ const Page = () => {
           </div>
 
           <div className="templates-grid">
-            {filteredTemplates.map((template) => (
+            {filteredTemplates.map((template) => {
+              const industryLink = getTemplateIndustryLink(template.industry);
+
+              return (
               <article className="templates-card" key={template.slug}>
                 <div className="templates-card-media">
                   <img src={template.image} alt={template.name} />
@@ -70,23 +73,21 @@ const Page = () => {
                   </ul>
 
                   <div className="templates-card-footer">
-                    <span className="templates-card-price">{template.price}</span>
                     <a
-                      href={`/onboarding?intent=build&template=${template.slug}`}
+                      href={industryLink.route}
                       className="templates-card-cta"
                       onClick={(e) => {
                         e.preventDefault();
-                        navigateWithTransition(
-                          `/onboarding?intent=build&template=${template.slug}`
-                        );
+                        navigateWithTransition(industryLink.route);
                       }}
                     >
-                      Start with template
+                      {industryLink.label}
                     </a>
                   </div>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

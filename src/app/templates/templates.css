@@ -168,7 +168,7 @@
 .templates-page .templates-card-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   margin-top: auto;
   padding-top: 0.5rem;
