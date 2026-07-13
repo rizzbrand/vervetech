@@ -14,6 +14,7 @@ const industries = [
   },
   {
     name: "Creator Economy",
+    slug: "creator-economy",
     description:
       "Platforms and tools that help creators monetize, grow audiences, and build sustainable brands.",
   },
@@ -34,6 +35,30 @@ const industries = [
     slug: "ai-technology",
     description:
       "AI-powered workflows and business automation that eliminate friction at scale.",
+  },
+  {
+    name: "Professional Services",
+    slug: "professional-services",
+    description:
+      "High-trust platforms for consulting, legal, accounting, and advisory firms.",
+  },
+  {
+    name: "Marketing / Sales Tech",
+    slug: "marketing-sales-tech",
+    description:
+      "Brand systems and revenue platforms that help teams launch, sell, and grow.",
+  },
+  {
+    name: "Automobile Industry",
+    slug: "automobile",
+    description:
+      "Virtual showrooms, buy and rent flows, and dealer platforms for modern automotive retail.",
+  },
+  {
+    name: "Healthtech",
+    slug: "healthtech",
+    description:
+      "Compliant digital products for providers — patient experiences, clinical workflows, and telehealth.",
   },
   {
     name: "Brand & Media",

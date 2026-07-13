@@ -2,7 +2,7 @@
 import "./home.css";
 import Hero from "@/components/Hero/Hero";
 import Footer from "@/components/Footer/Footer";
-import Preloader from "@/components/Preloader/Preloader";
+import Preloader, { PRELOADER_ENABLED } from "@/components/Preloader/Preloader";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,7 +26,7 @@ const Page = () => {
 
   return (
     <>
-      <Preloader />
+      {PRELOADER_ENABLED && <Preloader />}
       <Hero />
       <Footer />
     </>

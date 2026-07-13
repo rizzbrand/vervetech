@@ -67,12 +67,19 @@ nav.marketing-nav .nav-links {
   justify-self: center;
 }
 
+nav.marketing-nav .nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  justify-self: end;
+}
+
 nav.marketing-nav .nav-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 2.35rem;
-  margin-left: 0.35rem;
   padding: 0 1.1rem;
   border-radius: 999px;
   background: #0b0b0b;
@@ -649,6 +656,14 @@ nav.marketing-nav .close-label {
 
   nav.marketing-nav .nav-links {
     display: none;
+  }
+
+  nav.marketing-nav .nav-cta {
+    display: none;
+  }
+
+  nav.marketing-nav .nav-actions {
+    justify-self: end;
   }
 
   nav.marketing-nav .nav-dropdown-panel {

@@ -46,9 +46,9 @@ export const industriesMenuColumns = [
         icon: "healthtech",
       },
       {
-        title: "Marketing Tech",
-        description: "Brand systems and demand-gen ready products",
-        route: getIndustryMenuRoute("Marketing Tech"),
+        title: "Marketing / Sales Tech",
+        description: "Brand systems and revenue-ready go-to-market products",
+        route: getIndustryMenuRoute("Marketing / Sales Tech"),
         icon: "marketing",
       },
       {
@@ -65,7 +65,7 @@ export const industriesMenuColumns = [
       },
       {
         title: "Automobile industry",
-        description: "Launch fast with products that scale with you",
+        description: "Virtual showrooms and dealer platforms that sell cars",
         route: getIndustryMenuRoute("Automobile industry"),
         icon: "automobile",
       },

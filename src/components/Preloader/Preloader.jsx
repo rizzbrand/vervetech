@@ -7,7 +7,8 @@ import { useLenis } from "lenis/react";
 
 gsap.registerPlugin(useGSAP);
 
-export let isInitialLoad = true;
+export const PRELOADER_ENABLED = false;
+export let isInitialLoad = PRELOADER_ENABLED;
 
 const LOADER_DURATION = 3.5;
 const EXIT_DURATION = 0.75;

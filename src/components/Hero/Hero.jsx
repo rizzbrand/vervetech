@@ -100,9 +100,8 @@ const Hero = () => {
           <div className="hero-aside">
             <Copy animateOnScroll={false} delay={isInitialLoad ? 4.8 : 1.15}>
               <p>
-                Rizzbrand brings ideas, capital, and talent together — partnering
-                with founders and creators to build the best ideas into great
-                companies.
+                Empowering businesses, governments, NGOs, and nonprofits with AI, Saas, automation, software development,
+                cloud solutions, and digital transformation.
               </p>
             </Copy>
 

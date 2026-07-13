@@ -709,12 +709,15 @@ const Menu = ({ pageRef }) => {
             className="nav-logo-text"
             onClick={handleLogoClick}
           >
-            Rizzbrand Technologies
+           Sky Land Technologies
           </a>
         </div>
 
         <div className="nav-links">
           {navLinks.map((item) => renderNavLink(item))}
+        </div>
+
+        <div className="nav-actions">
           <a
             href="/onboarding"
             className="nav-cta"
@@ -725,21 +728,21 @@ const Menu = ({ pageRef }) => {
           >
             Get started
           </a>
-        </div>
 
-        <div
-          className="nav-toggle nav-toggle--mobile"
-          ref={navToggleRef}
-          onClick={toggleMenu}
-        >
-          <div className="nav-toggle-wrapper">
-            <p ref={openLabelRef} className="open-label">
-              Menu
-            </p>
+          <div
+            className="nav-toggle nav-toggle--mobile"
+            ref={navToggleRef}
+            onClick={toggleMenu}
+          >
+            <div className="nav-toggle-wrapper">
+              <p ref={openLabelRef} className="open-label">
+                Menu
+              </p>
 
-            <p ref={closeLabelRef} className="close-label">
-              Close
-            </p>
+              <p ref={closeLabelRef} className="close-label">
+                Close
+              </p>
+            </div>
           </div>
         </div>
       </nav>
