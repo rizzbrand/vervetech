@@ -18,7 +18,7 @@ const CTACard = () => {
           <div className="cta-col">
             <Copy animateOnScroll={true}>
               <p className="lg">
-                Rizzbrand Technologies partners with founders, creators, and
+                Sky Land Technology partners with founders, creators, and
                 enterprises exploring SaaS, AI, Web3, branding, and business
                 automation.
               </p>

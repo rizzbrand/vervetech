@@ -719,11 +719,11 @@ const Menu = ({ pageRef }) => {
 
         <div className="nav-actions">
           <a
-            href="/contact"
+            href="/discovery"
             className="nav-cta"
             onClick={(e) => {
               e.preventDefault();
-              navigateWithTransition("/contact");
+              navigateWithTransition("/discovery");
             }}
           >
             Get started
@@ -756,7 +756,7 @@ const Menu = ({ pageRef }) => {
             }}
           >
             <div className="menu-content-group">
-              <p>&copy; Rizzbrand Technologies</p>
+              <p>&copy; Sky Land Technology</p>
               <p>Innovation HQ</p>
               <p>Toronto</p>
             </div>
@@ -768,7 +768,7 @@ const Menu = ({ pageRef }) => {
 
             <div className="menu-content-group">
               <p>Say Hello</p>
-              <p>hi@rizzbrandtechnologies.com</p>
+              <p>hello@skylandtechnology.com</p>
             </div>
 
             <div className="menu-content-group">
@@ -801,7 +801,7 @@ const Menu = ({ pageRef }) => {
 
             <div className="menu-content-group">
               <p>Credits</p>
-              <p>Built by Rizzbrand Technologies</p>
+              <p>Built by Sky Land Technology</p>
               <p>Edition 2025</p>
             </div>
           </div>

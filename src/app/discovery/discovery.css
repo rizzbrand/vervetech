@@ -1,0 +1,229 @@
+.discovery-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background: #ffffff;
+  color: #0b0b0b;
+  padding: 7.5rem 0 4rem;
+}
+
+.discovery-shell {
+  max-width: 42rem;
+}
+
+.discovery-progress {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 1.75rem;
+  border-radius: 999px;
+  background: rgba(11, 11, 11, 0.08);
+  overflow: hidden;
+}
+
+.discovery-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #ff6e14;
+  transition: width 0.3s ease;
+}
+
+.discovery-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.discovery-eyebrow {
+  margin: 0;
+  font-family: "Geist Mono", "PP Neue Montreal", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(11, 11, 11, 0.45);
+}
+
+.discovery-steps {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.discovery-step-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: rgba(11, 11, 11, 0.12);
+}
+
+.discovery-step-dot--active {
+  background: #ff6e14;
+}
+
+.discovery-step-dot--done {
+  background: rgba(255, 110, 20, 0.45);
+}
+
+.discovery-header {
+  margin-bottom: 2rem;
+}
+
+.discovery-header h1,
+.discovery-success h1 {
+  text-transform: none;
+  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter, system-ui, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: #0b0b0b;
+}
+
+.discovery-header p.lg,
+.discovery-success p.lg {
+  margin-top: 0.85rem;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(11, 11, 11, 0.62);
+}
+
+.discovery-success a {
+  color: #0b0b0b;
+}
+
+.discovery-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.discovery-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.discovery-field span {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(11, 11, 11, 0.55);
+}
+
+.discovery-field input,
+.discovery-field select,
+.discovery-field textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(11, 11, 11, 0.12);
+  border-radius: 0.9rem;
+  background: #f7f7f7;
+  color: #0b0b0b;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.975rem;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 0.18s ease, background-color 0.18s ease,
+    box-shadow 0.18s ease;
+  resize: vertical;
+}
+
+.discovery-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #0b0b0b 50%),
+    linear-gradient(135deg, #0b0b0b 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.15rem) calc(50% - 0.15rem),
+    calc(100% - 0.85rem) calc(50% - 0.15rem);
+  background-size: 0.35rem 0.35rem, 0.35rem 0.35rem;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem;
+}
+
+.discovery-field input::placeholder,
+.discovery-field textarea::placeholder {
+  color: rgba(11, 11, 11, 0.35);
+}
+
+.discovery-field input:focus,
+.discovery-field select:focus,
+.discovery-field textarea:focus {
+  border-color: rgba(11, 11, 11, 0.28);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(11, 11, 11, 0.04);
+}
+
+.discovery-error {
+  margin: 1rem 0 0;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.875rem;
+  color: #b42318;
+}
+
+.discovery-actions,
+.discovery-success-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.discovery-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.1rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.discovery-btn--primary {
+  background: #ff6e14;
+  color: #ffffff;
+}
+
+.discovery-btn--primary:hover {
+  background: #f06412;
+  transform: translateY(-1px);
+}
+
+.discovery-btn--ghost {
+  background: transparent;
+  color: #0b0b0b;
+  border: 1px solid rgba(11, 11, 11, 0.14);
+}
+
+.discovery-btn--ghost:hover {
+  background: rgba(11, 11, 11, 0.04);
+}
+
+.discovery-success {
+  max-width: 36rem;
+  padding-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .discovery-page {
+    padding: 6.5rem 0 3rem;
+  }
+
+  .discovery-actions,
+  .discovery-success-actions {
+    flex-direction: column-reverse;
+  }
+
+  .discovery-btn {
+    width: 100%;
+  }
+}

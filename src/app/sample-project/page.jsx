@@ -47,7 +47,7 @@ const Page = () => {
 
           <div className="details">
             <p>Company</p>
-            <h3>Rizzbrand Technologies</h3>
+            <h3>Sky Land Technology</h3>
           </div>
         </Copy>
       </section>

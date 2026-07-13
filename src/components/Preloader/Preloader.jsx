@@ -127,7 +127,7 @@ const Preloader = () => {
           </span>
 
           <span className="preloader-meta-right">
-            Rizzbrand Technologies booting
+            Sky Land Technology booting
           </span>
         </div>
       </div>

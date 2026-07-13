@@ -3,9 +3,9 @@ import ClientLayout from "@/client-layout";
 import { ViewTransitions } from "next-view-transitions";
 
 export const metadata = {
-  title: "Rizzbrand Technologies",
+  title: "Sky Land Technology",
   description:
-    "A tech company building SaaS, AI, Web3, and automation products for the creator economy.",
+    "Empowering businesses, governments, NGOs, and nonprofits with AI, SaaS, automation, software development, cloud solutions, and digital transformation.",
   icons: {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
