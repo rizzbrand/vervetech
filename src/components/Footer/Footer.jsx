@@ -7,22 +7,22 @@ import Copy from "../Copy/Copy";
 import BouncingShapes from "@/components/BouncingShapes/BouncingShapes";
 
 const Footer = () => {
-  const [torontoTime, setTorontoTime] = useState("");
+  const [accraTime, setAccraTime] = useState("");
 
   useEffect(() => {
-    const updateTorontoTime = () => {
+    const updateAccraTime = () => {
       const formatter = new Intl.DateTimeFormat("en-US", {
-        timeZone: "America/Toronto",
+        timeZone: "Africa/Accra",
         hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
         hour12: false,
       });
-      setTorontoTime(formatter.format(new Date()));
+      setAccraTime(formatter.format(new Date()));
     };
 
-    updateTorontoTime();
-    const timeInterval = setInterval(updateTorontoTime, 1000);
+    updateAccraTime();
+    const timeInterval = setInterval(updateAccraTime, 1000);
     return () => clearInterval(timeInterval);
   }, []);
 
@@ -59,7 +59,7 @@ const Footer = () => {
         <div className="footer-byline">
           <div className="footer-time">
             <p>
-              Toronto, ON <span>{torontoTime}</span>
+              Accra, GH <span>{accraTime}</span>
             </p>
           </div>
 

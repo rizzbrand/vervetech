@@ -758,7 +758,7 @@ const Menu = ({ pageRef }) => {
             <div className="menu-content-group">
               <p>&copy; Sky Land Technology</p>
               <p>Innovation HQ</p>
-              <p>Toronto</p>
+              <p>Accra</p>
             </div>
 
             <div className="menu-content-group">
